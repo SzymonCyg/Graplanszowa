@@ -2,70 +2,82 @@
 
 using System.ComponentModel;
 
-class Player
-{
-    public string Name;
-    public int Position { get; set; }
-    public int Score { get; set; }
+// class Player
+// {
+//     public string Name { get; set; }
+//     public int Position { get; set; }
+//     public int Score { get; set; }
+//
+//     void Ruch(int x , int y)
+//     {
+//         
+//     }
+//
+//     public void akt(int score)
+//     {
+//         Score = score;
+//     }
+// }
 
-    void Ruch(int x , int y)
-    {
-        
-    }
-
-    public void akt(int score)
-    {
-        Score = score;
-    }
-}
-
-class Board
-{
-    public int rozmiarx;
-    public int rozmiary;
-
-    public int nagroda(int x, int y)
-    {
-        
-    }
-}
+// class Board
+// {
+//     public int rozmiarx;
+//     public int rozmiary;
+//
+//     public int nagroda(int x, int y)
+//     {
+//         
+//     }
+// }
 
 class Game
 {
-    void przebiegGry()
+    // void przebiegGry()
+    // {
+    //     
+    // }
+
+    public void poleNagroda()
     {
-        
+        int[] lokalizacjanagroda = new int[20];
+        Random losowanie = new Random();
+        for (int i = 0; i < 20; i++)
+        {
+            int x =losowanie.Next(1, 65);
+            lokalizacjanagroda[i] = x;
+        }
+        foreach (int liczba in lokalizacjanagroda)
+        {
+            Console.WriteLine(liczba);
+        }
+
     }
 
-    void poleNagroda()
-    {
-        
-    }
-
-    public int wynik()
-    {
-        
-    }
+    // public int wynik()
+    // {
+    //     
+    // }
 }
 
-interface IWojownik
-{
-    
-}
-
-interface IMag
-{
-    
-}
-
-interface IHealer
-{
-    
-}
+// interface IWojownik
+// {
+//     
+// }
+//
+// interface IMag
+// {
+//     
+// }
+//
+// interface IHealer
+// {
+//     
+// }
 internal class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Game gra = new Game();
+        gra.poleNagroda();
     }
 }

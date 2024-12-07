@@ -8,25 +8,27 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/home/szymonc/.nuget/packages/": {}
+    "C:\\Users\\szymo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/Gra planszowa.csproj",
+      "projectUniqueName": "C:\\Users\\szymo\\RiderProjects\\Graplanszowa\\Gra planszowa\\Gra planszowa.csproj",
       "projectName": "Gra planszowa",
-      "projectPath": "/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/Gra planszowa.csproj",
-      "packagesPath": "/home/szymonc/.nuget/packages/",
-      "outputPath": "/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/",
+      "projectPath": "C:\\Users\\szymo\\RiderProjects\\Graplanszowa\\Gra planszowa\\Gra planszowa.csproj",
+      "packagesPath": "C:\\Users\\szymo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\szymo\\RiderProjects\\Graplanszowa\\Gra planszowa\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "/home/szymonc/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\szymo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -65,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/szymonc/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\szymo\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
