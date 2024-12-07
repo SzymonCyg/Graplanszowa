@@ -4,24 +4,49 @@ using System.ComponentModel;
 
 class Player
 {
-    public string Name { get; set; }
-    public int Position { get; set; }
-    public int Score { get; set; }
+    private int[] lokalizacjaNagroda;
+    private int plansza;
 
+    public Player(int[] lokalizacjaNagroda,int plansza)
+    {
+        this.lokalizacjaNagroda = lokalizacjaNagroda;
+        this.plansza = plansza;
+        int poleGracz = 0;
+    }
+    public string Name { get; set; }
+    public int poleGracz { get; set; }
+    public int wynik { get; set; }
+
+    
     void Ruch()
     {
-        
+        Random losowanie = new Random();
+        int poleGraczDodaj=losowanie.Next(1,7);
+        poleGracz =poleGracz+poleGraczDodaj;
+        if(poleGracz>plansza)
+        {
+            poleGracz=poleGracz % plansza;
+        }
     }
 
-    public void akt(int score)
+    public void akt(int wynik)
     {
-        Score = score;
+        foreach (int nagroda in lokalizacjaNagroda)
+        {
+            if (nagroda == poleGracz) 
+            {
+                wynik += 1; 
+            }
+        }
     }
 }
 
 class Board{
+    public Board()
+    {
+        int plansza = 64;        
+    }
 
-    int plansza = 64;
 
     public int[] nagroda(int liczbaNagrod=20)
     {
@@ -45,16 +70,9 @@ class Game
     {
         this.lokalizacjaNagroda = lokalizacjaNagroda;
     }
-    public int poleGracz=0;
     public void Gra()
     {
-        Random losowanie = new Random();
-        int poleGraczDodaj=losowanie.Next(1,7);
-        poleGracz =poleGracz+poleGraczDodaj;
-        if(poleGracz>64)
-        {
-            poleGracz=poleGracz% 64;
-        }
+       
     }
 
     public void poleNagroda()
@@ -66,13 +84,7 @@ class Game
     {
         int wynik = 0;
 
-        foreach (int nagroda in lokalizacjaNagroda)
-        {
-            if (nagroda == poleGracz) 
-            {
-                wynik += 1; 
-            }
-        }
+        
 
         return wynik; 
     }
@@ -99,6 +111,7 @@ internal class Program
     {
         Board board = new Board();
         int[] lokalizacjaNagroda = board.nagroda();
+        int plansza = board.oard();
         Game game = new Game(lokalizacjaNagroda);
 
         
