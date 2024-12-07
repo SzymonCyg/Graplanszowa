@@ -8,7 +8,7 @@ class Player
     public int Position { get; set; }
     public int Score { get; set; }
 
-    void Ruch(int x , int y)
+    void Ruch()
     {
         
     }
@@ -23,16 +23,29 @@ class Board{
 
     int plansza = 64;
 
-    public int nagroda(int x, int y)
+    public int[] nagroda(int liczbaNagrod=20)
     {
         
+        Random losowanie = new Random();
+        int[] lokalizacjaNagroda = new int [liczbaNagrod];
+        for (int i = 0; i < 20; i++)
+        {
+            int x =losowanie.Next(1, 65);
+            lokalizacjaNagroda[i] = x;
+        }
+        return lokalizacjaNagroda;
     }
 }
 
 class Game
 { 
-    public int[] lokalizacjaNagroda = new int[20];
-    public int poleGracz= int 0;
+    private int[] lokalizacjaNagroda;
+
+    public Game(int[] lokalizacjaNagroda)
+    {
+        this.lokalizacjaNagroda = lokalizacjaNagroda;
+    }
+    public int poleGracz=0;
     public void Gra()
     {
         Random losowanie = new Random();
@@ -47,12 +60,6 @@ class Game
     public void poleNagroda()
     {
  
-        Random losowanie = new Random();
-        for (int i = 0; i < 20; i++)
-        {
-            int x =losowanie.Next(1, 65);
-            lokalizacjaNagroda[i] = x;
-        }
     }
 
     public int wynik()
@@ -90,7 +97,10 @@ internal class Program
 {
     public static void Main(string[] args)
     {
-        Game gra = new Game();
-        gra.poleNagroda();
+        Board board = new Board();
+        int[] lokalizacjaNagroda = board.nagroda();
+        Game game = new Game(lokalizacjaNagroda);
+
+        
     }
 }
