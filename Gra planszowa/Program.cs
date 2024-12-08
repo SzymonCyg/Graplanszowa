@@ -97,24 +97,16 @@ class Game
                break;
            }
        }
-
        wyniki();
     }
 
-    public void poleNagroda()
+    public void wyniki()
     {
- 
+        foreach (var player in players)
+        {
+            Console.WriteLine($"Gracz: {player.Name} zdobył {player.wynik} punktow");
+        }
     }
-
-    public int wyniki()
-    {
-        
-
-        
-
-        return wynik; 
-    }
-
 }
 
 // interface IWojownik
@@ -137,9 +129,14 @@ internal class Program
     {
         Board board = new Board();
         int[] lokalizacjaNagroda = board.nagroda();
-        int plansza = board.oard();
-        Game game = new Game(lokalizacjaNagroda);
+        Player[] players =
+        {
+            new Player(lokalizacjaNagroda, board.plansza) { Name = "gracz1" },
+            new Player(lokalizacjaNagroda, board.plansza) { Name = "gracz2" },
+            new Player(lokalizacjaNagroda, board.plansza) { Name = "gracz3" }
+        };
 
-        
+        Game game = new Game(board, players);
+        game.Gra();
     }
 }

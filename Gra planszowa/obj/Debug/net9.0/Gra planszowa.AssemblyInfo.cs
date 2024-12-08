@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gra planszowa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+631ca74cab14cbffe2520ce121622a169d2eaed2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46fb9cd45a4548bbaa2e61e78e60e247c9d6111c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gra planszowa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gra planszowa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
