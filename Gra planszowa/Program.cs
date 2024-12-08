@@ -70,15 +70,35 @@ class Board{
 
 class Game
 { 
-    private int[] lokalizacjaNagroda;
+    private Board board;
+    private Player[] players;
+    
 
-    public Game(int[] lokalizacjaNagroda)
+    public Game(Board board, Player[] players)
     {
-        this.lokalizacjaNagroda = lokalizacjaNagroda;
+        this.board = board;
+        this.players = players;
     }
-    public void Gra()
+    public void Gra( int wynikKoncowy=30)
     {
-       
+        int runda = 1;
+       Console.WriteLine("Gra się rozpoczyna");
+       foreach (Player player in players)
+       {
+           if (player.wynik<=wynikKoncowy)
+           {
+               player.Ruch();
+               player.akt();
+               runda++;
+           }
+           else
+           {
+               Console.WriteLine($"gracz {player.Name} wygrywa osiągając jako pierwszy {player.wynik}.");
+               break;
+           }
+       }
+
+       wyniki();
     }
 
     public void poleNagroda()
@@ -86,9 +106,9 @@ class Game
  
     }
 
-    public int wynik()
+    public int wyniki()
     {
-        int wynik = 0;
+        
 
         
 
