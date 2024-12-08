@@ -6,19 +6,21 @@ class Player
 {
     private int[] lokalizacjaNagroda;
     private int plansza;
+    public string Name { get; set; }
+    public int poleGracz { get; set; }
+    public int wynik { get; set; }
 
     public Player(int[] lokalizacjaNagroda,int plansza)
     {
         this.lokalizacjaNagroda = lokalizacjaNagroda;
         this.plansza = plansza;
-        int poleGracz = 0;
+        this.poleGracz = 0;
+        this.wynik = 0;
     }
-    public string Name { get; set; }
-    public int poleGracz { get; set; }
-    public int wynik { get; set; }
+
 
     
-    void Ruch()
+    public void Ruch()
     {
         Random losowanie = new Random();
         int poleGraczDodaj=losowanie.Next(1,7);
@@ -27,24 +29,28 @@ class Player
         {
             poleGracz=poleGracz % plansza;
         }
+        Console.WriteLine($"Gracz: {Name} wyrzucił: {poleGraczDodaj} i trafił na pole: {poleGracz}.");
     }
 
-    public void akt(int wynik)
+    public void akt()
     {
         foreach (int nagroda in lokalizacjaNagroda)
         {
             if (nagroda == poleGracz) 
             {
                 wynik += 1; 
+                Console.WriteLine($"Gracz: {Name} trafił na pole nagroda obecny wynik to: {wynik}.");
+                break;
             }
         }
     }
 }
 
 class Board{
-    public Board()
+    public int plansza { get; private set; }
+    public Board(int rozmiar =64)
     {
-        int plansza = 64;        
+        plansza = rozmiar;       
     }
 
 
