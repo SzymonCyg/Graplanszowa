@@ -94,6 +94,10 @@ class Game
                    player.Ruch();
                    player.akt();
                    runda++;
+                   if (player is Wojownik wojownik)
+                   {
+                       wojownik.walka(players); 
+                   }
                }
                else
                {
@@ -116,20 +120,40 @@ class Game
     }
 }
 
-// interface IWojownik
-// {
-//     
-// }
-//
-// interface IMag
-// {
-//     
-// }
-//
-// interface IHealer
-// {
-//     
-// }
+public interface IWojownik
+{ 
+    public void walka();
+}
+
+public interface IMag
+{
+    void zaklecie();
+}
+
+public interface IHealer
+{
+    void leczenie();
+}
+
+class Wojownik: Player, IWojownik
+{
+   
+    public Wojownik(int[] lokalizacjaNagroda, int plansza, string name) : base(lokalizacjaNagroda, plansza)
+    {
+        this.Name = name;
+    }
+    public void walka(Player[] players)
+    {
+        foreach (var player in players)
+        {
+            if (player.poleGracz == this.poleGracz && player != this)
+            {
+                Console.WriteLine($"{this.Name} walczy z {player.Name} i zdobywa dodatkowe punkty!");
+                this.wynik += 2;
+            }
+        }
+    }
+}
 internal class Program
 {
     public static void Main(string[] args)
@@ -138,7 +162,7 @@ internal class Program
         int[] lokalizacjaNagroda = board.nagroda();
         Player[] players =
         {
-            new Player(lokalizacjaNagroda, board.plansza) { Name = "gracz1" },
+            new Wojownik(lokalizacjaNagroda, board.plansza, "Wojownik"),
             new Player(lokalizacjaNagroda, board.plansza) { Name = "gracz2" },
             new Player(lokalizacjaNagroda, board.plansza) { Name = "gracz3" }
         };
