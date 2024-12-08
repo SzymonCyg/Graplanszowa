@@ -29,7 +29,7 @@ class Player
         {
             poleGracz=poleGracz % plansza;
         }
-        Console.WriteLine($"Gracz: {Name} wyrzucił: {poleGraczDodaj} i trafił na pole: {poleGracz}.");
+        Console.WriteLine($"\nGracz: {Name} wyrzucił: {poleGraczDodaj} i trafił na pole: {poleGracz}.");
     }
 
     public void akt()
@@ -54,12 +54,12 @@ class Board{
     }
 
 
-    public int[] nagroda(int liczbaNagrod=20)
+    public int[] nagroda(int liczbaNagrod=40)
     {
         
         Random losowanie = new Random();
         int[] lokalizacjaNagroda = new int [liczbaNagrod];
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < liczbaNagrod; i++)
         {
             int x =losowanie.Next(1, 65);
             lokalizacjaNagroda[i] = x;
@@ -79,24 +79,31 @@ class Game
         this.board = board;
         this.players = players;
     }
-    public void Gra( int wynikKoncowy=30)
+    public void Gra( int wynikKoncowy=10)
     {
         int runda = 1;
        Console.WriteLine("Gra się rozpoczyna");
-       foreach (Player player in players)
+       int i = 0;
+       while (i!=1)
        {
-           if (player.wynik<=wynikKoncowy)
+           Console.WriteLine($"\nRunda: {runda}");
+           foreach (Player player in players)
            {
-               player.Ruch();
-               player.akt();
-               runda++;
-           }
-           else
-           {
-               Console.WriteLine($"gracz {player.Name} wygrywa osiągając jako pierwszy {player.wynik}.");
-               break;
+               if (player.wynik < wynikKoncowy)
+               {
+                   player.Ruch();
+                   player.akt();
+                   runda++;
+               }
+               else
+               {
+                   Console.WriteLine($"gracz {player.Name} wygrywa osiągając jako pierwszy {player.wynik}.");
+                   i++;
+                   break;
+               }
            }
        }
+
        wyniki();
     }
 
@@ -104,7 +111,7 @@ class Game
     {
         foreach (var player in players)
         {
-            Console.WriteLine($"Gracz: {player.Name} zdobył {player.wynik} punktow");
+            Console.WriteLine($"\nGracz: {player.Name} zdobył {player.wynik} punktow");
         }
     }
 }
