@@ -1,15 +1,30 @@
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\bin\Debug\net9.0\Gra planszowa.exe
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\bin\Debug\net9.0\Gra planszowa.deps.json
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\bin\Debug\net9.0\Gra planszowa.runtimeconfig.json
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\bin\Debug\net9.0\Gra planszowa.dll
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\bin\Debug\net9.0\Gra planszowa.pdb
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\Gra planszowa.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\Gra planszowa.AssemblyInfoInputs.cache
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\Gra planszowa.AssemblyInfo.cs
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\Gra planszowa.csproj.CoreCompileInputs.cache
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\Gra planszowa.sourcelink.json
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\Gra planszowa.dll
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\refint\Gra planszowa.dll
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\Gra planszowa.pdb
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\Gra planszowa.genruntimeconfig.cache
-C:\Users\szymo\RiderProjects\Graplanszowa\Gra planszowa\obj\Debug\net9.0\ref\Gra planszowa.dll
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa.exe
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa.deps.json
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa.runtimeconfig.json
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa.dll
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa.pdb
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.AssemblyInfoInputs.cache
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.AssemblyInfo.cs
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.csproj.CoreCompileInputs.cache
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.sourcelink.json
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.dll
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/refint/Gra planszowa.dll
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.pdb
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.genruntimeconfig.cache
+C:/Users/szymo/RiderProjects/Graplanszowa/Gra planszowa/obj/Debug/net9.0/ref/Gra planszowa.dll
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa.deps.json
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa.runtimeconfig.json
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa.dll
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/bin/Debug/net9.0/Gra planszowa.pdb
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.GeneratedMSBuildEditorConfig.editorconfig
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.AssemblyInfoInputs.cache
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.AssemblyInfo.cs
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.csproj.CoreCompileInputs.cache
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.sourcelink.json
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.dll
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/refint/Gra planszowa.dll
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.pdb
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/Gra planszowa.genruntimeconfig.cache
+/home/szymonc/RiderProjects/Gra planszowa/Gra planszowa/obj/Debug/net9.0/ref/Gra planszowa.dll

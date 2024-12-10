@@ -2,7 +2,7 @@
 
 using System.ComponentModel;
 
-class Player
+public class Player
 {
     private int[] lokalizacjaNagroda;
     private int plansza;
@@ -94,9 +94,17 @@ class Game
                    player.Ruch();
                    player.akt();
                    runda++;
-                   if (player is Wojownik wojownik)
+                   if (player is IWojownik wojownik)
                    {
-                       wojownik.walka(players); 
+                       wojownik.walka(players);
+                   }
+                   if (player is IHealer healer)
+                   {
+                       healer.leczenie(players);
+                   }
+                   if (player is IMag mag)
+                   {
+                       mag.zaklecie(players);
                    }
                }
                else
@@ -122,26 +130,25 @@ class Game
 
 public interface IWojownik
 { 
-    public void walka();
+    public void walka(Player[] players);
 }
 
 public interface IMag
 {
-    void zaklecie();
+    public void zaklecie(Player[] players);
 }
 
 public interface IHealer
 {
-    void leczenie();
+    public void leczenie(Player[] players);
 }
-
-class Wojownik: Player, IWojownik
+public class Wojownik : Player, IWojownik
 {
-   
-    public Wojownik(int[] lokalizacjaNagroda, int plansza, string name) : base(lokalizacjaNagroda, plansza)
+    public Wojownik(string name, int[] lokalizacjaNagroda, int plansza) : base(lokalizacjaNagroda, plansza) 
     {
         this.Name = name;
     }
+    
     public void walka(Player[] players)
     {
         foreach (var player in players)
@@ -154,6 +161,49 @@ class Wojownik: Player, IWojownik
         }
     }
 }
+
+public class Healer : Player, IHealer
+{
+    public Healer(string name, int[] lokalizacjaNagroda, int plansza) : base(lokalizacjaNagroda, plansza) 
+    {
+        this.Name = name;
+    }
+    
+    public void leczenie(Player[] players)
+    {
+        foreach (var player in players)
+        {
+            if (player.poleGracz == this.poleGracz && player != this)
+            {
+                Console.WriteLine($"{this.Name} leczy {player.Name} i zdobywa dodatkowe punkty!");
+                this.wynik += 2;
+                player.wynik += 1;
+            }
+        }
+    }
+}
+
+public class Mag : Player, IMag
+{
+    public Mag(string name, int[] lokalizacjaNagroda, int plansza) : base(lokalizacjaNagroda, plansza) 
+    {
+        this.Name = name;
+    }
+    
+    public void zaklecie(Player[] players)
+    {
+        foreach (var player in players)
+        {
+            if (player.poleGracz == this.poleGracz && player != this)
+            {
+                Console.WriteLine($"{this.Name} rzuca zaklęcie na {player.Name} i zdobywa dodatkowe punkty!");
+                this.wynik += 1;
+                player.wynik -= 1;
+            }
+        }
+    }
+}
+
 internal class Program
 {
     public static void Main(string[] args)
@@ -162,9 +212,9 @@ internal class Program
         int[] lokalizacjaNagroda = board.nagroda();
         Player[] players =
         {
-            new Wojownik(lokalizacjaNagroda, board.plansza, "Wojownik"),
-            new Player(lokalizacjaNagroda, board.plansza) { Name = "gracz2" },
-            new Player(lokalizacjaNagroda, board.plansza) { Name = "gracz3" }
+            new Wojownik("Wojownik", lokalizacjaNagroda, board.plansza),
+            new Mag("Mag", lokalizacjaNagroda, board.plansza),
+            new Healer("Healer", lokalizacjaNagroda, board.plansza)
         };
 
         Game game = new Game(board, players);
