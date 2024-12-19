@@ -22,6 +22,8 @@ public class Player
     
     public void Ruch()
     {
+        Console.WriteLine($"{Name}, rzuć kostką klikając enter");
+        Console.ReadLine();
         Random losowanie = new Random();
         int poleGraczDodaj=losowanie.Next(1,7);
         poleGracz =poleGracz+poleGraczDodaj;
@@ -93,7 +95,6 @@ class Game
                {
                    player.Ruch();
                    player.akt();
-                   runda++;
                    if (player is IWojownik wojownik)
                    {
                        wojownik.walka(players);
@@ -114,6 +115,7 @@ class Game
                    break;
                }
            }
+           runda++;
        }
 
        wyniki();
@@ -210,14 +212,69 @@ internal class Program
     {
         Board board = new Board();
         int[] lokalizacjaNagroda = board.nagroda();
-        Player[] players =
-        {
-            new Wojownik("Wojownik", lokalizacjaNagroda, board.plansza),
-            new Mag("Mag", lokalizacjaNagroda, board.plansza),
-            new Healer("Healer", lokalizacjaNagroda, board.plansza)
-        };
+        Console.WriteLine("Wybierz postać dla pierwszego gracza: (1) Wojownik (2) Mag (3) Healer");
+        int wybor = int.Parse(Console.ReadLine());
 
-        Game game = new Game(board, players);
-        game.Gra();
+        Player player1;
+        switch (wybor)
+        {
+            case 1:
+                player1 = new Wojownik("Wojownik", lokalizacjaNagroda, board.plansza);
+                break;
+            case 2:
+                player1 = new Mag("Mag", lokalizacjaNagroda, board.plansza);
+                break;
+            case 3:
+                player1 = new Healer("Healer", lokalizacjaNagroda, board.plansza);
+                break;
+            default:
+                Console.WriteLine("Niepoprawny wybór, wybieram Wojownika domyślnie.");
+                player1 = new Wojownik("Wojownik", lokalizacjaNagroda, board.plansza);
+                break;
+        }
+        Console.WriteLine("Wybierz postać dla drugiego gracza: (1) Wojownik (2) Mag (3) Healer");
+        int wybor2 = int.Parse(Console.ReadLine());
+        Player player2;
+        switch (wybor2)
+        {
+            case 1:
+                player2 = new Wojownik("Wojownik", lokalizacjaNagroda, board.plansza);
+                break;
+            case 2:
+                player2 = new Mag("Mag", lokalizacjaNagroda, board.plansza);
+                break;
+            case 3:
+                player2 = new Healer("Healer", lokalizacjaNagroda, board.plansza);
+                break;
+            default:
+                Console.WriteLine("Niepoprawny wybór, wybieram Maga domyślnie.");
+                player2 = new Mag("Mag", lokalizacjaNagroda, board.plansza);
+                break;
+        }
+        Console.WriteLine("Wybierz postać dla trzeciego gracza: (1) Wojownik (2) Mag (3) Healer");
+        int wybor3 = int.Parse(Console.ReadLine());
+        Player player3;
+        switch (wybor3)
+        {
+            case 1:
+                player3 = new Wojownik("Wojownik", lokalizacjaNagroda, board.plansza);
+                break;
+            case 2:
+                player3 = new Mag("Mag", lokalizacjaNagroda, board.plansza);
+                break;
+            case 3:
+                player3 = new Healer("Healer", lokalizacjaNagroda, board.plansza);
+                break;
+            default:
+                Console.WriteLine("Niepoprawny wybór, wybieram Healera domyślnie.");
+                player3 = new Healer("Healera", lokalizacjaNagroda, board.plansza);
+                break;
+        }
+        
+        Console.WriteLine("Podaj maksymalny wynik, który trzeba osiągnąć, aby wygrać: ");
+        int wynikKoncowy = int.Parse(Console.ReadLine());
+
+        Game game = new Game(board, new Player[] { player1, player2, player3 });
+        game.Gra(wynikKoncowy);
     }
 }
